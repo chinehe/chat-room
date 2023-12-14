@@ -37,6 +37,7 @@ func Logout(user *User) error {
 func HandleMessage(user *User, message []byte) {
 	messageFormat := "<span style='color: blue'>[ %s ]</span>  <span style='color: rgb(255,0,38)'>< %s ></span> : %s"
 	message = []byte(fmt.Sprintf(messageFormat, user.IP, user.Name, message))
+	log.Printf("user(%s:%s) send:%s",user.IP,user.Name,string(message))
 	for _, u := range chatRoom.users {
 		u.Write(message)
 	}
