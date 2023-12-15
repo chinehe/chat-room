@@ -24,7 +24,7 @@
 </html>
 <script type="text/javascript">
     var uname = prompt('请输入用户名', 'user' + uuid(8, 16));
-    var ws = new WebSocket("ws://39.106.150.250:8080/user/login?name="+uname);
+    var ws = new WebSocket("ws://127.0.0.1:8080/user/login?name="+uname);
     ws.onopen = function () {
         var data = "系统消息：建立连接成功";
         listMsg(data);
